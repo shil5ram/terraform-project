@@ -71,6 +71,7 @@ resource "aws_lb_target_group_attachment" "web_app" {
 }
 
 resource "aws_lb_listener_rule" "web_app" {
+  count       = var.alb_listener_arn != "" ? 1 : 0
  listener_arn = var.alb_listener_arn
  priority     = 10
 
@@ -87,4 +88,5 @@ resource "aws_lb_listener_rule" "web_app" {
    }
  }
 }
+
 

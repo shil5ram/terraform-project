@@ -34,3 +34,9 @@ data "aws_ami" "amazon_linux" {
     values = ["amzn2-ami-hvm-*-x86_64-gp2"]
   }
 }
+
+#Lookup by name
+data "aws_lb" "ce13" {
+  name = "ce13-coaching7-shared-alb"
+  
+}
